@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build 和 Push Docker Image
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner.toLowerCase() }}/nav-item:latest
+            ghcr.io/${{ github.repository_owner || 'xwf8188' }}/nav-item:latest
           labels: |
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.description=nav-item
